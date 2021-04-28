@@ -43,3 +43,8 @@ jobs:
       - name: Build client-side
         working-directory: ./client-side
         run: npm run build
+
+      - name: Run app
+        working-directory: ./server-side
+        run: npm run app
+        
