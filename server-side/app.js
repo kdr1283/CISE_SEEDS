@@ -1,12 +1,12 @@
-const express = require('express');
-const connectDB = require('./config/db');
+const express = require("express")
+const connectDB = require("./config/db")
 
-const app = express();
+const app = express()
 
-connectDB();
+connectDB()
 
-app.get('/', (req, res) => res.send('Hello world! MongoDB connected'));
+app.get('/', (req, res) => res.send("Hello world! MongoDB connected"))
 
-const port = process.env.PORT || 8082;
+const port = process.env.PORT || 8082
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log("Server running on port ${port}"))
