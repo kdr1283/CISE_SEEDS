@@ -32,6 +32,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       
+      - name: Install server-side directory dependencies
+        working-directory: ./server-side
+        run: npm install
+        
       - name: Install client-side directory dependencies
         working-directory: ./client-side
         run: npm install
@@ -44,7 +48,5 @@ jobs:
         working-directory: ./client-side
         run: npm run build
 
-      - name: Node app
-        working-directory: ./server-side
-        run: node app
+
         
