@@ -36,6 +36,10 @@ jobs:
         working-directory: ./server-side
         run: npm install
         
+      - name: Run server-side tests
+        working-directory: ./server-side
+        run: npm test
+        
       - name: Run lint on server-side
         working-directory: ./server-side
         run: npm run lint
