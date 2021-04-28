@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node app.js",
     "app": "nodemon app.js",
-    "test": "app.test.js",
     "lint": "eslint"
   },
   "repository": {
