@@ -32,11 +32,26 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       
-      - name: Install dependencies
+      - name: Install client-side directory dependencies
+        working-directory: ./client-side
         run: npm install
         
-      - name: Run the tests
+      - name: Install server-side directory dependencies
+        working-directory: ./server-side
+        run: npm install
+        
+      - name: Run the client-side tests
+        working-directory: ./client-side
         run: npm test
         
-      - name: Build
+      - name: Run the server-side tests
+        working-directory: ./server-side
+        run: npm test
+        
+      - name: Build client-side
+        working-directory: ./client-side
+        run: npm run build
+
+      - name: Build server-side
+        working-directory: ./server-side
         run: npm run build
