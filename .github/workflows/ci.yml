@@ -43,11 +43,7 @@ jobs:
       - name: Run the client-side tests
         working-directory: ./client-side
         run: npm test
-        
-      - name: Run the server-side tests
-        working-directory: ./server-side
-        run: npm test
-        
+
       - name: Build client-side
         working-directory: ./client-side
         run: npm run build
