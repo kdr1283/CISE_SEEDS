@@ -33,27 +33,27 @@ jobs:
           node-version: ${{ matrix.node-version }}
       
       - name: Install server-side directory dependencies
-        working-directory: ./server-side
+        working-directory: ./api
         run: npm install
         
       - name: Run lint on server-side
-        working-directory: ./server-side
+        working-directory: ./api
         run: npm run lint
         
       - name: Install client-side directory dependencies
-        working-directory: ./client-side
+        working-directory: ./api/client
         run: npm install
         
       - name: Run the client-side tests
-        working-directory: ./client-side
+        working-directory: ./api/client
         run: npm test
         
       - name: Run lint on client-side
-        working-directory: ./client-side
+        working-directory: ./api/client
         run: npm run lint
 
       - name: Build client-side
-        working-directory: ./client-side
+        working-directory: ./api/client
         run: npm run build
 
 
