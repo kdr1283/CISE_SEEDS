@@ -40,10 +40,6 @@ jobs:
         working-directory: ./api
         run: npm run lint
         
-      - name: Run api app
-        working-directory: ./api
-        run: npm run app
-        
       - name: Install client dependencies
         working-directory: ./api/client
         run: npm install
@@ -55,10 +51,6 @@ jobs:
       - name: Run lint on client
         working-directory: ./api/client
         run: npm run lint
-        
-      - name: Start client app
-        working-directory: ./api/client
-        run: npm start
 
       - name: Build client-side
         working-directory: ./api/client
