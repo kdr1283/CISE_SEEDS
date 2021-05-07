@@ -11,8 +11,6 @@ app.use(express.json())
 
 app.get('/', (req, res) => res.send("Hello world! MongoDB connected"))
 
-const port = process.env.PORT || 8082
-
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, '/client/build')))
 
@@ -24,5 +22,7 @@ if(process.env.NODE_ENV === "production") {
         res.send("Api running")
     })
 }
+
+const port = process.env.PORT
 
 app.listen(port, () => console.log(`Server running on port ${port}`))
