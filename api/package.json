@@ -2,10 +2,9 @@
   "name": "server-side",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js",
-    "app": "nodemon app.js",
+    "start": "nodemon server.js",
     "lint": "eslint",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
