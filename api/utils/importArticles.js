@@ -19,18 +19,18 @@ const importData = async () => {
 };
 
 const deleteData = async () => {
-    try {
-      await Article.deleteMany({});
-      console.log("Data successfully deleted");
-      process.exit();
-    } catch (error) {
-      console.log(`ERROR: ${error}`);
-      process.exit(1);
-    }
-  };
-  
-  if (process.argv[2] === "--import") {
-    importData();
-  } else if (process.argv[2] === "--delete") {
-    deleteData();
-  };
+  try {
+    await Post.deleteMany({});
+    console.log("Data successfully deleted");
+    process.exit();
+  } catch (error) {
+    console.log(`ERROR 💥: ${error}`);
+    process.exit(1);
+  }
+};
+
+if (process.argv[2] === "--import") {
+  importData();
+} else if (process.argv[2] === "--delete") {
+  deleteData();
+}
