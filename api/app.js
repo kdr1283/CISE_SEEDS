@@ -3,9 +3,11 @@ const path = require('path')
 const express = require("express")
 const connectDB = require("./config/db")
 
+connectDB()
+
 const app = express()
 
-connectDB()
+app.use(express.json())
 
 app.get('/', (req, res) => res.send("Hello world! MongoDB connected"))
 
