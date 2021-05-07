@@ -9,7 +9,7 @@ const app = express()
 
 app.use(express.json())
 
-app.get('/', (req, res) => res.send("Hello world! MongoDB connected"))
+//app.get('/', (req, res) => res.send("Hello world! MongoDB connected"))
 
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, '/client/build')))
