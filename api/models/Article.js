@@ -13,15 +13,15 @@ const ArticleSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-  SE_Practice: {
+  practice: {
     type: String,
     required: true
   },
-  Claim: {
+  claim: {
     type: String,
     required: true
   },
-  Strength_of_Evidence: {
+  strength: {
     type: String,
     required: true
   }
