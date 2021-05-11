@@ -31,7 +31,7 @@ class ShowArticleList extends Component {
   }
 
   render() {
-    const { articles } = this.state.articles
+    const articles = this.state.articles
     console.log(`PrintArticle: ${articles}`)
     let articleList
 
