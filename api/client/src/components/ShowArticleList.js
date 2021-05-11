@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-console */
 /* eslint-disable react/destructuring-assignment */
@@ -30,7 +31,7 @@ class ShowArticleList extends Component {
   }
 
   render() {
-    const { articles } = this.state
+    const { articles } = this.state.articles
     console.log(`PrintArticle: ${articles}`)
     let articleList
 
