@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-console */
@@ -7,13 +8,15 @@ import React, { Component } from "react"
 import "../App.css"
 import axios from "axios"
 import { Link } from "react-router-dom"
-import ArticleCard from "./ArticleCard"
+import ArticleTable from "./ArticleTable"
 
 class ShowArticleList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      articles: [],
+      articles:[
+        {}
+      ],
     }
   }
 
@@ -31,42 +34,11 @@ class ShowArticleList extends Component {
   }
 
   render() {
-    const articles = this.state.articles
-    console.log(`PrintArticle: ${articles}`)
-    let articleList
-
-    if (!articles) {
-      articleList = "there is no article record!"
-    } else {
-      articleList = articles.map((article, k) => (
-        <ArticleCard article={article} key={k} />
-      ))
-    }
-
     return (
-      <div className="ShowArticleList">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <br />
-              <h2 className="display-4 text-center">Articles List</h2>
-            </div>
-
-            <div className="col-md-11">
-              <Link
-                to="/create-article"
-                className="btn btn-outline-warning float-right"
-              >
-                + Add New Article
-              </Link>
-              <br />
-              <br />
-              <hr />
-            </div>
-          </div>
-
-          <div className="list">{articleList}</div>
-        </div>
+      <div className="App">
+        SEEDS Database
+        <br/> Articles Table
+        <ArticleTable data={this.state.articles}/>
       </div>
     )
   }

@@ -2,7 +2,8 @@ require("dotenv").config({ path: "./config.env" })
 const path = require('path')
 const express = require("express")
 const connectDB = require("./config/db")
-var cors = require("cors");
+const articles = require("./routes/api/articles")
+var cors = require("cors")
 
 connectDB()
 
@@ -11,7 +12,8 @@ const app = express()
 // cors
 app.use(cors({ origin: true, credentials: true }));
 
-app.use(express.json())
+// Init Middleware
+app.use(express.json({ extended: false }));
 
 //app.get('/', (req, res) => res.send("Hello world! MongoDB connected"))
 
@@ -26,7 +28,9 @@ if(process.env.NODE_ENV === "production") {
         res.send("Api running")
     })
 }
- 
+
+app.use('/api/articles', articles);
+
 const port = process.env.PORT
 
 app.listen(port, () => console.log(`Server running on port ${port}`))

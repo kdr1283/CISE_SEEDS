@@ -3,14 +3,14 @@ import React, { Component } from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import "./App.css"
 
-import ShowBookList from "./components/ShowArticleList"
+import ShowArticleList from "./components/ShowArticleList"
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={ShowBookList} />
+          <Route exact path="/" component={ShowArticleList} />
         </div>
       </Router>
     )
