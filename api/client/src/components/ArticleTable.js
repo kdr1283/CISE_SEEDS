@@ -40,7 +40,7 @@ export default class Table extends React.Component {
     render() {
         return (
           <div>
-            <table>
+            <table border="1" width="100%">
             <thead>
               <tr>{this.getHeader()}</tr>
             </thead>
