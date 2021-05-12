@@ -16,18 +16,18 @@ export default class Table extends React.Component {
       this.getKeys = this.getKeys.bind(this);
     }
     
-    getKeys = function(){
+    getKeys = function() {
       return Object.keys(this.props.data[0]);
     }
     
-    getHeader = function(){
+    getHeader = function() {
       var keys = this.getKeys();
       return keys.map((key, index)=>{
         return <th key={key}>{key.toUpperCase()}</th>
       })
     }
     
-    getRowsData = function(){
+    getRowsData = function() {
       var items = this.props.data;
       var keys = this.getKeys();
       return items.map((row, index)=>{
@@ -52,7 +52,7 @@ export default class Table extends React.Component {
     }
 }
 
-const RenderRow = (props) =>{
+const RenderRow = (props) => {
   return props.keys.map((key, index)=>{
     return <td key={props.data[key]}>{props.data[key]}</td>
   })
