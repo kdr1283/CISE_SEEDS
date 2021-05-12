@@ -36,8 +36,7 @@ class ShowArticleList extends Component {
   render() {
     return (
       <div className="App">
-        SEEDS Database
-        <br/> Articles Table
+        <h1>SEEDS Research Evidence and Articles Repository</h1>
         <ArticleTable data={this.state.articles}/>
       </div>
     )
