@@ -7,6 +7,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable arrow-body-style */
 import React from 'react';
+import "../App.css"
 
 export default class Table extends React.Component {
     
