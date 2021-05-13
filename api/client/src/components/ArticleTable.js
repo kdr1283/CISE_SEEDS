@@ -7,7 +7,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import "../App.css"
+/* import "../App.css" */
+import "../index.css";
 
 export default class Table extends React.Component {
     
@@ -40,7 +41,7 @@ export default class Table extends React.Component {
     render() {
         return (
           <div>
-            <table border="1" width="100%">
+            <table>
             <thead>
               <tr>{this.getHeader()}</tr>
             </thead>
