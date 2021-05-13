@@ -7,15 +7,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable arrow-body-style */
 import React from 'react';
-/* import "../App.css" */
 import "../index.css";
 
-export default class Table extends React.Component {
+export default class ArticleTable extends React.Component {
     
     constructor(props){
       super(props);
-      this.getHeader = this.getHeader.bind(this);
-      this.getRowsData = this.getRowsData.bind(this);
+      this.getColumns = this.getColumns.bind(this);
+      this.getRows = this.getRows.bind(this);
       this.getKeys = this.getKeys.bind(this);
     }
     
@@ -23,17 +22,17 @@ export default class Table extends React.Component {
       return Object.keys(this.props.data[0]);
     }
     
-    getHeader = function() {
+    getColumns = function() {
       var keys = this.getKeys();
       return keys.map((key, index)=>{
         return <th key={key}>{key.toUpperCase()}</th>
       })
     }
     
-    getRowsData = function() {
-      var items = this.props.data;
+    getRows = function() {
+      var records = this.props.data;
       var keys = this.getKeys();
-      return items.map((row, index)=>{
+      return records.map((row, index)=>{
         return <tr key={index}><RenderRow key={index} data={row} keys={keys}/></tr>
       })
     }
@@ -43,10 +42,10 @@ export default class Table extends React.Component {
           <div>
             <table>
             <thead>
-              <tr>{this.getHeader()}</tr>
+              <tr>{this.getColumns()}</tr>
             </thead>
             <tbody>
-              {this.getRowsData()}
+              {this.getRows()}
             </tbody>
             </table>
           </div>
